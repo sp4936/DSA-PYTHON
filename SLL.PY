@@ -29,14 +29,35 @@ class SLL:
     def search(self, element):
         if not self.is_empty():
             temp = self.start
-            while temp.next is not None:
+            while temp is not None:
                 if (temp.data == element):
                     return True
                 else:
                     return False
+                temp = temp.next
             
-        return False
+        return None
+    
+    def inser_after(self, data, new_data):
+        temp = self.start
+        
+        while temp.data != data:
+            temp = temp.next
+        n = Node(new_data, temp.next)
+        temp.next = n
+        
+    def print_all_elements(self):
+        temp = self.start
+        while temp is not None:
+            print(temp.data)
+            temp = temp.next
+        
                 
+                
+                
+my_obj = SLL()
+my_obj.insert_at_start(20)
+my_obj.print_all_elements()
             
         
         
